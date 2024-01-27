@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connect } from '@/utils/database';
 import Flight from '@/models/flight';
-import { NextApiRequest } from 'next';
 
 connect();
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest) {
   try {
     const flights = await Flight.find({});
     console.log(flights);
