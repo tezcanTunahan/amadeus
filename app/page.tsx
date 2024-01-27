@@ -34,7 +34,7 @@ export default function Home() {
       />
       <h2 className='font-semibold text-2xl'>
         Flights are only available for the dates between 26-01-2024 and
-        30-01-2024.
+        30-03-2024.
       </h2>
       <p>
         your flight from {from} to {to} at {date}

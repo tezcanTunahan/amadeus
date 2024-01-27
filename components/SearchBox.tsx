@@ -30,7 +30,14 @@ export default function SearchBox({
           value={from}
           setValue={setFrom}
         />
-        <Button>swap</Button>
+        <Button
+          onClick={() => {
+            const temp = from;
+            setFrom(to);
+            setTo(temp);
+          }}>
+          Swap
+        </Button>
         <Input label='To' placeholder='Search' value={to} setValue={setTo} />
         <Date label='Departure' setValue={setDate} value={date} />
         {!oneWay && (
