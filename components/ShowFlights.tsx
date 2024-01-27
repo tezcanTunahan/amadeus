@@ -14,13 +14,16 @@ export default function ShowFlights({
   const [flights, setFlights] = useState<any[]>([]);
   const [listBy, setListBy] = useState<string>('');
   const [filteredFlights, setFilteredFlights] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setLoading(true);
     axios
-      // .get('http://localhost:3000/api/flights')
-      .get('https://amadeus-seven.vercel.app/api/flights')
+      .get('http://localhost:3000/api/flights')
+      // .get('https://amadeus-seven.vercel.app/api/flights')
       .then((response) => {
         setFlights(response.data.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -70,6 +73,7 @@ export default function ShowFlights({
       <div>
         {from + ' ' + to + ' ' + date}
 
+        {loading && <p>loading...</p>}
         {filteredFlights.map((flight) => {
           return (
             <div
