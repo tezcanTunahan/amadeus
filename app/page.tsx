@@ -41,7 +41,7 @@ export default function Home() {
       </p>
       <div className='flex '>
         <ShowFlights from={from} to={to} date={date} />
-        <ShowFlights from={to} to={from} date={returnDate} />
+        {!oneWay && <ShowFlights from={to} to={from} date={returnDate} />}
       </div>
       <div className=''>{showAllFlights && <ShowAllFlights />}</div>
     </main>

@@ -6,7 +6,6 @@ connect();
 export async function GET(req: NextRequest) {
   try {
     const flights = await Flight.find({});
-    console.log(flights);
     return NextResponse.json({
       message: 'Flight saved',
       success: true,
@@ -56,8 +55,6 @@ export async function POST() {
       const savedFlight = await newFlight.save();
       flights.push(savedFlight);
     }
-
-    console.log(flights);
 
     return NextResponse.json({
       message: 'Flights saved',

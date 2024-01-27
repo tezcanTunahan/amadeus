@@ -26,9 +26,11 @@ export default function SearchBox({
       <div className='flex items-end justify-center  w-max gap-2 '>
         <Input
           label='From'
-          placeholder='Search'
+          options={['istanbul', 'ankara', 'adana']}
           value={from}
-          setValue={setFrom}
+          onChange={(e: any) => {
+            setFrom(e.target.value);
+          }}
         />
         <Button
           onClick={() => {
@@ -38,7 +40,14 @@ export default function SearchBox({
           }}>
           Swap
         </Button>
-        <Input label='To' placeholder='Search' value={to} setValue={setTo} />
+        <Input
+          label='To'
+          options={['istanbul', 'ankara', 'adana']}
+          value={to}
+          onChange={(e: any) => {
+            setTo(e.target.value);
+          }}
+        />
         <Date label='Departure' setValue={setDate} value={date} />
         {!oneWay && (
           <div>

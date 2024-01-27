@@ -1,11 +1,11 @@
 import React from 'react';
 
 export default function Input(
-  { placeholder, label, value, setValue } = {
-    placeholder: 'Search',
+  { label, value, options, onChange } = {
     label: 'Search',
     value: '',
-    setValue: (e: any) => {},
+    onChange: (e: any) => {},
+    options: [''],
   }
 ) {
   return (
@@ -21,15 +21,14 @@ export default function Input(
         focus:ring-2
         focus:ring-blue-400
         focus:border-transparent
-        
        '
         id={label}
         value={value}
-        onChange={(e) => setValue(e.target.value)}>
-        <option value=''>Select</option>
-        <option value='istanbul'>Istanbul</option>
-        <option value='ankara'>Ankara</option>
-        <option value='adana'>Adana</option>
+        onChange={onChange}>
+        <option>Select</option>
+        {options.map((option: string) => {
+          return <option value={option}>{option}</option>;
+        })}
       </select>
     </div>
   );

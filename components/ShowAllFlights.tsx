@@ -7,9 +7,9 @@ export default function ShowAllFlights({}: {}) {
 
   React.useEffect(() => {
     axios
+      // .get(' http://localhost:3000/api/flights')
       .get('https://amadeus-seven.vercel.app/api/flights')
       .then((response) => {
-        console.log(response.data.data);
         setFlights(response.data.data);
       })
       .catch((error) => {
