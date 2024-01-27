@@ -39,9 +39,17 @@ export default function Home() {
       <p>
         your flight from {from} to {to} at {date}
       </p>
-      <div className='flex '>
-        <ShowFlights from={from} to={to} date={date} />
-        {!oneWay && <ShowFlights from={to} to={from} date={returnDate} />}
+      <div className='flex w-full justify-around'>
+        <div>
+          <h3 className='text-xl text-blue-600'>departure</h3>
+          <ShowFlights from={from} to={to} date={date} />
+        </div>
+        {!oneWay && (
+          <div>
+            <h3 className='text-xl text-blue-600'>return</h3>
+            <ShowFlights from={to} to={from} date={returnDate} />
+          </div>
+        )}
       </div>
       <div className=''>{showAllFlights && <ShowAllFlights />}</div>
     </main>
