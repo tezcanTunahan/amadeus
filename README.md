@@ -1,3 +1,7 @@
+for live : https://amadeus-seven.vercel.app/ 
+![image](https://github.com/tezcanTunahan/amadeus/assets/84778158/f4976495-5055-4542-aefc-881e4b2e0233)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
